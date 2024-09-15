@@ -30,8 +30,30 @@ This [spreadsheet](https://docs.google.com/spreadsheets/d/1MYreBw6wxBCLsgTJqhO9g
 
 As calculated, the standard deviation from each evaluation metric is given below:
 Gross conversion: Standard deviation = 0.0072
-Retention
-Net conversion
+Retention: Standard deviation = 0.0194
+Net Conversion: Standard deviation = 0.0055 
+
+The standard deviation formula is given as σ= √(p(1−p)/n)
+The solution was carried out in the spreadsheet linked above. The formula is an analytical formula used to calculate the standard deviation of a binomial distribution (which applies here, since each metric involves a proportion of successes over a number of trials)
+The inputs for this formula were the probabilities 
+𝑝 (success rates) and n (sample sizes), which were given in the problem.
+The result was obtained purely through mathematical calculation (analytically), rather than through any empirical method (like simulations or experimental data collection).
+
+---
+Question
+Do you expect the analytic estimates to be accurate? That is, for which metrics, if any, would you want to collect an empirical estimate of the variability if you had time?
+
+Response: 
+The **Gross Conversion** due to its large sample size and straightforward calculation. **Retention** may benefit from empirical validation given its smaller sample size. **Net Conversion**, with a lower success probability, is more prone to variability, so collecting empirical estimates would provide a more accurate understanding of this metric's variability.
+
+---
+
+
+
+​
+ 
+​
+ 
 
 
 
