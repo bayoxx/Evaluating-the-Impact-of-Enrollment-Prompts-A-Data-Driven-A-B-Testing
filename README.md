@@ -48,10 +48,35 @@ The **Gross Conversion** due to its large sample size and straightforward calcul
 
 ---
 
+### Sizing
+#### Choosing the Number of Samples given Power
 
+**Step 1:** 
 
-​
- 
+For each metric, we will use the following inputs:
+
+Alpha (α): 0.05 (the significance level, corresponding to a 95% confidence level).
+Beta (β): 0.2 (corresponding to 80% power, or 1 - β).
+Minimum Detectable Effect (dmin):
+Gross Conversion: 0.01
+Retention: 0.01
+Net Conversion: 0.0075
+
+**Step 2:** 
+
+​Sample Size Formula
+We can use the following formula for sample size estimation in an A/B test with two groups (control and treatment):
+
+ n= (2(σ^2)(Zα+Zβ)^2)/ dmin^2
+
+Where:
+n is the sample size per group.
+σ is the standard deviation of the metric.
+Zα is the z-value for the significance level (α = 0.05, so Zα = 1.96)
+Zβ is the z-value for the power level (β = 0.2, so Zβ = 0.84)
+dmin is the minimum detectable effect size.
+
+Again, the metrics have been calculated in the referenced sheet above. You can also check [here](https://docs.google.com/spreadsheets/d/1MYreBw6wxBCLsgTJqhO9g4Ppf3dQbX7HFfIwWkMvmjE/edit?gid=103790292#gid=103790292)
 ​
  
 
