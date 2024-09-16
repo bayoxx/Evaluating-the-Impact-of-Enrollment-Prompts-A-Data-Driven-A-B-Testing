@@ -205,7 +205,7 @@ The spreadsheet below shows the calculated confidence interval (CI) for the thre
 
 #### Metrics Overview:
 
-*Gross Conversion:*
+**Gross Conversion:**
 Statistically significant (both in the original test and the sign test).
 Practically significant.
 
@@ -214,11 +214,26 @@ Statistically not significant, but practically significant.
 Sign test also confirms no statistical significance (p-value > α).
 
 **Retention:**
-					Statistically and practically significant in the original analysis.
-					Sign test indicates no statistical significance (p-value > α).
+Statistically and practically significant in the original analysis.
+Sign test indicates no statistical significance (p-value > α).
+
+#### Recommended Action: 
+
+- Dig Deeper and Run a Follow-Up Experiment:
+While gross conversion is a strong positive signal, the uncertainty around net conversion and retention suggests that further investigation and refinement of the experiment are needed before a full launch.
+
+- Dig Deeper:
+Focus on retention and net conversion: Both are practically significant but lack strong statistical significance. Investigating why retention and net conversion didn't reach statistical significance could reveal insights about user behavior.
+Different user segments can be analyzed (e.g., users who enrolled vs. those who accessed free materials) or periods within the experiment to see if certain groups were more impacted.
+
+- Running a Follow-Up Experiment:
+Given that net conversion didn’t reach statistical significance but is practically significant, running a follow-up experiment could help to gather more data. Increasing the sample size or extending the experiment duration could provide clearer results on whether the net conversion will improve and whether retention shows more definitive significance.
+This follow-up could also refine messaging or UX elements to improve user decisions at key stages like checkout and post-trial conversion.
 
 
 
+
+Note: I attached a more detailed report to this repository, or you can check here.
 
 
 
