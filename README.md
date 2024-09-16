@@ -64,7 +64,7 @@ Using the formula below, the respective power for each evaluation
 For each metric, we will use the following inputs:
 
 
- n= (2(σ/2 ^2)(Z<sub>α/2</sub> + Z<sub>β</sub>)^2)/ dmin^2
+ **n= (2(σ ^2)(Z<sub>α/2</sub> + Z<sub>β</sub>)^2)/ dmin^2**
 
 Where:
 
