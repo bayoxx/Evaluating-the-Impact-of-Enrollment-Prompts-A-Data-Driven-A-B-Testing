@@ -191,7 +191,31 @@ The spreadsheet below shows the calculated confidence interval (CI) for the thre
 
 
 
+### Sign test
 
+| Metric            | No of trials | No of successes | Two-tail P value | Two-tail P value < α (0.05) |
+|-------------------|--------------|-----------------|------------------|-----------------------------|
+| Gross conversion   | 23           | 4               | 0.0026           | Yes                         |
+| Net conversion     | 23           | 10              | 0.6776           | No                          |
+| Retention          | 23           | 13              | 0.6776           | No                          |
+
+
+
+### Recommendation
+
+#### Metrics Overview:
+
+*Gross Conversion:*
+Statistically significant (both in the original test and the sign test).
+Practically significant.
+
+**Net Conversion:**
+Statistically not significant, but practically significant.
+Sign test also confirms no statistical significance (p-value > α).
+
+**Retention:**
+					Statistically and practically significant in the original analysis.
+					Sign test indicates no statistical significance (p-value > α).
 
 
 
