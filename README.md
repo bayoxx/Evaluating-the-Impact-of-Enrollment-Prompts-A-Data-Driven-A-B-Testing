@@ -27,13 +27,13 @@ To reduce the number of students leaving the free trial due to time constraints 
 
 This [spreadsheet](https://docs.google.com/spreadsheets/d/1MYreBw6wxBCLsgTJqhO9g4Ppf3dQbX7HFfIwWkMvmjE/edit?gid=103790292#gid=103790292) shows the calculated values of the evaluation metrics.
 
-The standard deviation formula is given as σ= √(p(1−p)/n)
+The standard deviation formula is given as **σ= √(p(1−p)/n)**
 The solution was carried out in the spreadsheet linked above. 
 
 As calculated, the standard deviation from each evaluation metric is given below:
-Gross conversion: Standard deviation = 0.0072
-Retention: Standard deviation = 0.0194
-Net Conversion: Standard deviation = 0.0055 
+- Gross conversion: Standard deviation = 0.0072
+- Retention: Standard deviation = 0.0194
+- Net Conversion: Standard deviation = 0.0055 
 
 The formula is an analytical formula used to calculate the standard deviation of a binomial distribution (which applies here, since each metric involves a proportion of successes over a number of trials)
 
