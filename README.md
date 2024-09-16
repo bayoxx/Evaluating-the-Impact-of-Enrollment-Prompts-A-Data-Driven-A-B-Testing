@@ -1,4 +1,5 @@
-### A-B-testing
+### Evaluating the Impact of Enrollment Prompts on User Engagement: A Data-Driven A/B Testing
+
 Note: This project is from the
 In this experiment, Udacity tested a change on the course overview page aimed at setting clearer time expectations for students enrolling in a free trial. Students who clicked "Start a free trial" were asked how much time they had to commit to the course. Those with fewer than 5 hours per week received a message suggesting they may want to access the free course materials instead. 
 
@@ -44,7 +45,11 @@ Question
 Do you expect the analytic estimates to be accurate? That is, for which metrics, if any, would you want to collect an empirical estimate of the variability if you had time?
 
 Response: 
-The **Gross Conversion** due to its large sample size and straightforward calculation. **Retention** may benefit from empirical validation given its smaller sample size. **Net Conversion**, with a lower success probability, is more prone to variability, so collecting empirical estimates would provide a more accurate understanding of this metric's variability.
+**Gross Conversion:**  The probability of enrollment given a click is relatively high (20.625%), and the sample size (3,200 clicks per day) is large. For gross conversion, the analytic estimate should be fairly accurate because large sample sizes tend to produce reliable standard deviations when assuming binomial distribution.
+
+**Retention** may benefit from empirical validation given its smaller sample size. 
+
+**Net Conversion**, with a lower success probability, is more prone to variability, so collecting empirical estimates would provide a more accurate understanding of this metric's variability.
 
 ---
 
@@ -67,12 +72,13 @@ Net Conversion: 0.0075
 ​Sample Size Formula
 We can use the following formula for sample size estimation in an A/B test with two groups (control and treatment):
 
- n= (2(σ^2)(Zα+Zβ)^2)/ dmin^2
+ n= (2(σ/2 ^2)(Zα+Zβ)^2)/ dmin^2
 
 Where:
+H~2~O
 n is the sample size per group.
 σ is the standard deviation of the metric.
-Zα is the z-value for the significance level (α = 0.05, so Zα = 1.96)
+Zα/2 is the z-value for the significance level (α = 0.05, so Zα = 1.96)
 Zβ is the z-value for the power level (β = 0.2, so Zβ = 0.84)
 dmin is the minimum detectable effect size.
 
