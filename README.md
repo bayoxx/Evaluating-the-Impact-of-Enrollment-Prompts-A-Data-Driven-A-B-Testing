@@ -58,21 +58,13 @@ Response:
 ### Sizing
 #### Choosing the Number of Samples given Power
 
-**Step 1:** 
+Number of Samples vs. Power
+
+Using the formula below, the respective power for each evaluation
+
 
 For each metric, we will use the following inputs:
 
-- Alpha (α): 0.05 (the significance level, corresponding to a 95% confidence level).
-- Beta (β): 0.2 (corresponding to 80% power, or 1 - β).
-- Minimum Detectable Effect (dmin):
-- Gross Conversion: 0.01
-- Retention: 0.01
-- Net Conversion: 0.0075
-
-**Step 2:** 
-
-​Sample Size Formula
-We can use the following formula for sample size estimation in an A/B test with two groups (control and treatment):
 
  n= (2(σ/2 ^2)(Z<sub>α/2</sub> + Z<sub>β</sub>)^2)/ dmin^2
 
@@ -85,6 +77,15 @@ Where:
 - dmin is the minimum detectable effect size.
 
 Again, the metrics have been calculated in the referenced sheet above. You can also check [here](https://docs.google.com/spreadsheets/d/1MYreBw6wxBCLsgTJqhO9g4Ppf3dQbX7HFfIwWkMvmjE/edit?gid=103790292#gid=103790292)
+
+You can also check the table below
+| Metric            | Probability | Standard dev | Pageview power per group | Total pageviews for both groups |
+|-------------------|-------------|--------------|--------------------------|---------------------------------|
+| Gross conversion   | 0.2063      | 0.0072       | 8                        | 16                              |
+| Retention          | 0.5300      | 0.0194       | 59                       | 118                             |
+| Net Conversion     | 0.1093      | 0.0055       | 8                        | 17                              |
+| **Total**          |             |              |                          | **151**                         |
+
 ​
  To adequately power the experiment, we need to ensure we have enough pageviews for each metric. A total of 151 pageviews are needed.
 
@@ -113,20 +114,20 @@ Thus, the experiment would run very quickly, and there is no need to reconsider 
 This [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786) shows the cleaned data needed to compute the above metrics, broken down day by day. This includes both the control and experimental groups.
 
 The descriptions of the columns are provided below
+
 - Pageviews: Number of unique cookies to view the course overview page that day.
 - Clicks: Number of unique cookies to click the course overview page that day.
 - Enrollments: Number of user-ids to enroll in the free trial that day.
 - Payments: Number of user-ids who who enrolled on that day to remain enrolled for 14 days and thus make a payment. (Note that the date for this column is the start date, that is, the date of enrollment, rather than the date of the payment. The payment happened 14 days later. Because of this, the enrollments and payments are tracked for 14 fewer days than the other columns.)
 
-Conducting sanity checks for the invariant metrics (Pageviews and Clicks) at a 95% confidence interval for the control and experiment groups. The result below can be found in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786).
+Conducting sanity checks for the invariant metrics (page views) at a 95% confidence interval for the control and experiment groups. The result below can be found in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786).
 
-I calculated a click-through probability column on both sides of the control and experiment. The result can be seen in the spreadsheet.
 
 ---
 
 ### Sanity Check on Pageviews (Invariant metric):
 
-First, I conducted a sanity check on the pageviews to verify if randomization between the control and experiment groups was successful. We’ll use a binomial test for this.
+First, I conducted a sanity check on the pageviews to verify if randomization between the control and experiment groups was successful. I used a binomial test for this.
 
 **Steps for Sanity Check:**
 Note that all these calculations was carried out in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786). I included the calculations here to make it easy to follow.
@@ -138,17 +139,18 @@ Note that all these calculations was carried out in the [spreadsheet](https://do
 
 1. **Null Hypothesis**: The pageviews should be split equally (50/50) between the control and experiment groups.
 2. **Calculate Total Pageviews**:
-                     Control Group Total Pageviews: 345,543
-                     Experiment Group Total Pageviews: 344,660
-`                    Combined Total Pageviews: 345,543+344,660= 690,203
-3. **Expected Pageviews per Group: Since the split should be random, the expected pageviews for each group are: 690,203 / 2  = 345,101.5
+                     - Control Group Total Pageviews: 345,543
+                     - Experiment Group Total Pageviews: 344,660
+`                    - Combined Total Pageviews: 345,543+344,660= 690,203
+3. **Expected Pageviews per Group:**
+ Since the split should be random, the expected pageviews for each group are: 690,203 / 2  = 345,101.5
 
 
 4. Standard Error (SE): The standard error is based on the binomial distribution:
-= √p * (1-p)/  Combined Total Pageviews
+			= √p * (1-p)/  Combined Total Pageviews
 
 Since the cookies are randomly selected, p =0.5.
-Thus, SE = 0.0006
+			Thus, SE = 0.0006
 
 
 5. Margin of Error (ME): For a 95% confidence level, the margin of error is:
@@ -162,24 +164,24 @@ So, the confidence interval is approximately: [344,273 to  345,929]
 7. Observed Values:
 Control Group Pageviews: 345,543
 Experiment Group Pageviews: 344,660
-The control group's pageviews (345,543) fall within the confidence interval [344,273 to  345,929], so the sanity check passes.
+The control group's pageviews (345,543) fall within the confidence interval [344,273 to  345,929], so the **sanity check passes.**
 
-**However, this is not sufficient enough to launch the features. Further analysis needs to be conducted on the evaluation metrics to guide our actions.**
+*However, this is not sufficient enough to launch the features. Further analysis needs to be conducted on the evaluation metrics to guide our actions.*
 
 ---
 ### Check for Practical and Statistical Significance (Evaluation metrics)
 
 Evaluation metrics used: 
-				                   Gross Conversion;
+		       Gross Conversion;
                        Retention; and 
                        Net Conversion.
 
-These metrics align with the hypothesis and goals of the experiment. They measure user interest their level of commitment and the likelihood of succeeding in the course.
-The calculations that we’ll be using have been carried out in the spreadsheet here.
+These three metrics align with the hypothesis and goals of the experiment. They measure user interest their level of commitment and the likelihood of succeeding in the course.
+The calculations that we’ll be using have been carried out in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786).
 
 
 **Definition:**
-In this case, a metric is **statistically significant** if the confidence interval does not include 0 (that is, you can be confident there was a change), and it is practically significant if the confidence interval does not include the **practical significance boundary** (that is, you can be confident there is a change that matters to the business).
+In this case, a metric is **statistically significant** if the confidence interval does not include 0 (that is, one can be confident there was a change), and it is practically significant if the confidence interval does not include the **practical significance boundary** (that is, one can be confident there is a change that matters to the business).
 
 The spreadsheet below shows the calculated confidence interval (CI) for the three evaluation metrics.
 
@@ -215,25 +217,24 @@ Sign test also confirms no statistical significance (p-value > α).
 
 **Retention:**
 Statistically and practically significant in the original analysis.
-Sign test indicates no statistical significance (p-value > α).
+However, Sign test indicates no statistical significance (p-value > α).
 
 #### Recommended Action: 
 
-- Dig Deeper and Run a Follow-Up Experiment:
+- Digging Deeper and Running a Follow-Up Experiment:
 While gross conversion is a strong positive signal, the uncertainty around net conversion and retention suggests that further investigation and refinement of the experiment are needed before a full launch.
 
-- Dig Deeper:
+- Digging Deeper:
 Focus on retention and net conversion: Both are practically significant but lack strong statistical significance. Investigating why retention and net conversion didn't reach statistical significance could reveal insights about user behavior.
 Different user segments can be analyzed (e.g., users who enrolled vs. those who accessed free materials) or periods within the experiment to see if certain groups were more impacted.
 
 - Running a Follow-Up Experiment:
-Given that net conversion didn’t reach statistical significance but is practically significant, running a follow-up experiment could help to gather more data. Increasing the sample size or extending the experiment duration could provide clearer results on whether the net conversion will improve and whether retention shows more definitive significance.
+Given that **net conversion** didn’t reach statistical significance but is practically significant, running a follow-up experiment could help to gather more data. Increasing the sample size or extending the experiment duration could provide clearer results on whether the net conversion will improve and whether retention shows more definitive significance.
 This follow-up could also refine messaging or UX elements to improve user decisions at key stages like checkout and post-trial conversion.
 
 
 
-
-Note: I attached a more detailed report to this repository, or you can check here.
+Note: I attached a more detailed report to this repository, or you can check it here.
 
 
 
