@@ -1,7 +1,9 @@
 ## Evaluating the Impact of Enrollment Prompts on User Engagement: A Data-Driven A/B Testing
 
 Note: I attached a more detailed report to this repository, or you can check here.
+
 Note: This project is from the udacity website.
+
 In this experiment, Udacity tested a change on the course overview page aimed at setting clearer time expectations for students enrolling in a free trial. Students who clicked "Start a free trial" were asked how much time they had to commit to the course. Those with fewer than 5 hours per week received a message suggesting they may want to access the free course materials instead. 
 
 **Goal:**
@@ -118,16 +120,21 @@ The descriptions of the columns are provided below
 
 Conducting sanity checks for the invariant metrics (Pageviews and Clicks) at a 95% confidence interval for the control and experiment groups. The result below can be found in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786).
 
-I calculated a click through probability column on both sides of the control and experiment. The result can be seen in the spreadsheet.
+I calculated a click-through probability column on both sides of the control and experiment. The result can be seen in the spreadsheet.
 
 ---
 
 ### Sanity Check on Pageviews (Invariant metric):
 
-First, I conducted sanity check on the pageviews to verify if randomization between the control and experiment groups was successful. We’ll use a binomial test for this.
+First, I conducted a sanity check on the pageviews to verify if randomization between the control and experiment groups was successful. We’ll use a binomial test for this.
 
 **Steps for Sanity Check:**
 Note that all these calculations was carried out in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786). I included the calculations here to make it easy to follow.
+
+| Metric    | Total pageviews | Average pageviews | Probability (random) | Standard error | Margin of error | CI- lower      | CI- upper      | Sanity check |
+|-----------|-----------------|------------------|----------------------|----------------|-----------------|----------------|----------------|--------------|
+| Pageviews | 690203           | 345101.5         | 0.5                  | 0.0006         | 0.0012          | 344273.2564    | 345929.7436    | Pass         |
+
 
 1. **Null Hypothesis**: The pageviews should be split equally (50/50) between the control and experiment groups.
 2. **Calculate Total Pageviews**:
@@ -152,13 +159,35 @@ ME=1.96×SE
 
 So, the confidence interval is approximately: [344,273 to  345,929]
 
-7. CObserved Values:
+7. Observed Values:
 Control Group Pageviews: 345,543
 Experiment Group Pageviews: 344,660
 The control group's pageviews (345,543) fall within the confidence interval [344,273 to  345,929], so the sanity check passes.
 
 **However, this is not sufficient enough to launch the features. Further analysis needs to be conducted on the evaluation metrics to guide our actions.**
 
+---
+### Check for Practical and Statistical Significance (Evaluation metrics)
+
+Evaluation metrics used: 
+				                   Gross Conversion;
+                       Retention; and 
+                       Net Conversion.
+
+These metrics align with the hypothesis and goals of the experiment. They measure user interest their level of commitment and the likelihood of succeeding in the course.
+The calculations that we’ll be using have been carried out in the spreadsheet here.
+
+
+**Definition:**
+In this case, a metric is **statistically significant** if the confidence interval does not include 0 (that is, you can be confident there was a change), and it is practically significant if the confidence interval does not include the **practical significance boundary** (that is, you can be confident there is a change that matters to the business).
+
+The spreadsheet below shows the calculated confidence interval (CI) for the three evaluation metrics.
+
+| Metrics           | Metric differences | P pool | Standard Error | Margin of error | CI- lower | CI- upper | d-min  | Statistically Significant? | Practically Significant? |
+|-------------------|--------------------|--------|----------------|-----------------|-----------|-----------|--------|----------------------------|--------------------------|
+| Gross conversion   | -0.0125            | 0.1271 | 0.0028         | 0.0055          | -0.0180   | -0.0070   | 0.0100 | Yes                        | Yes                      |
+| Net conversion     | -0.0030            | 0.0702 | 0.0021         | 0.0042          | -0.0072   | 0.0012    | 0.0075 | No                         | Yes                      |
+| Retention          | -1.2936            | 0.5519 | 0.0117         | 0.0230          | -1.3166   | -1.2706   | 0.0010 | Yes                        | Yes                      |
 
 
 
