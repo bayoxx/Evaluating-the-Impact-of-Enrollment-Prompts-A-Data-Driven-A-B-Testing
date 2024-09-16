@@ -35,9 +35,11 @@ Retention: Standard deviation = 0.0194
 Net Conversion: Standard deviation = 0.0055 
 
 The standard deviation formula is given as σ= √(p(1−p)/n)
-The solution was carried out in the spreadsheet linked above. The formula is an analytical formula used to calculate the standard deviation of a binomial distribution (which applies here, since each metric involves a proportion of successes over a number of trials)
-The inputs for this formula were the probabilities 
-𝑝 (success rates) and n (sample sizes), which were given in the problem.
+The solution was carried out in the spreadsheet linked above. 
+
+The formula is an analytical formula used to calculate the standard deviation of a binomial distribution (which applies here, since each metric involves a proportion of successes over a number of trials)
+
+The inputs for this formula were the probabilities 𝑝 (success rates) and n (sample sizes), which were given in the problem.
 The result was obtained purely through mathematical calculation (analytically), rather than through any empirical method (like simulations or experimental data collection).
 
 ---
@@ -84,8 +86,23 @@ Where:
 
 Again, the metrics have been calculated in the referenced sheet above. You can also check [here](https://docs.google.com/spreadsheets/d/1MYreBw6wxBCLsgTJqhO9g4Ppf3dQbX7HFfIwWkMvmjE/edit?gid=103790292#gid=103790292)
 ​
- 
+ To adequately power the experiment, we need to ensure we have enough pageviews for each metric. A total of 151 pageviews are needed.
+
+ #### Duration
+
+ To calculate the % of traffic to divert to the experiment, we need to focus on those who click "Start free trial” (3,200 cookies)" The total number of pageviews we need for both groups is 151.
+
+**% of traffic to divert** = no of pageviews required for both groups/  unique cookies who click "Start free trial” 
+
+= 4.73%
 
 
+**Risk consideration** 
+
+The change in the experiment doesn’t seem too risky (it’s a change to messaging about time commitment), so there’s no strong reason to avoid diverting all traffic. 
+
+#### Exposure 
+With 5% of traffic diverted to the experiment, it would take less than a day to collect enough data for the sample size based on the analytic estimates of variance.
+Thus, the experiment would run very quickly, and there is no need to reconsider any earlier decisions regarding the sample size or traffic diversion percentage.
 
 
