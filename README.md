@@ -1,4 +1,4 @@
-### Evaluating the Impact of Enrollment Prompts on User Engagement: A Data-Driven A/B Testing
+## Evaluating the Impact of Enrollment Prompts on User Engagement: A Data-Driven A/B Testing
 
 Note: This project is from the
 In this experiment, Udacity tested a change on the course overview page aimed at setting clearer time expectations for students enrolling in a free trial. Students who clicked "Start a free trial" were asked how much time they had to commit to the course. Those with fewer than 5 hours per week received a message suggesting they may want to access the free course materials instead. 
@@ -104,5 +104,30 @@ The change in the experiment doesn’t seem too risky (it’s a change to messag
 #### Exposure 
 With 5% of traffic diverted to the experiment, it would take less than a day to collect enough data for the sample size based on the analytic estimates of variance.
 Thus, the experiment would run very quickly, and there is no need to reconsider any earlier decisions regarding the sample size or traffic diversion percentage.
+
+
+
+### Experiment Analysis
+#### Sanity Checks
+This [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786) shows the cleaned data needed to compute the above metrics, broken down day by day. This include both the control and experimental group.
+
+The descriptions of the columns are provided below
+- Pageviews: Number of unique cookies to view the course overview page that day.
+- Clicks: Number of unique cookies to click the course overview page that day.
+- Enrollments: Number of user-ids to enroll in the free trial that day.
+- Payments: Number of user-ids who who enrolled on that day to remain enrolled for 14 days and thus make a payment. (Note that the date for this column is the start date, that is, the date of enrollment, rather than the date of the payment. The payment happened 14 days later. Because of this, the enrollments and payments are tracked for 14 fewer days than the other columns.)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
