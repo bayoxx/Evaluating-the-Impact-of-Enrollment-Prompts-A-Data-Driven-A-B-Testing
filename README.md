@@ -72,7 +72,7 @@ For each metric, we will use the following inputs:
 ​Sample Size Formula
 We can use the following formula for sample size estimation in an A/B test with two groups (control and treatment):
 
- n= (2(σ/2 ^2)(Z<sub>α</sub/>+Z<sub>β<s/ub>)^2)/ dmin^2
+ n= (2(σ/2 ^2)(Z<sub>α</sub> + Z<sub>β</sub>)^2)/ dmin^2
 
 Where:
 
