@@ -1,6 +1,6 @@
 ## Evaluating the Impact of Enrollment Prompts on User Engagement: A Data-Driven A/B Testing
 
-Note: I attached a more detailed report to this repository, or you can check it [here](https://github.com/bayoxx/Evaluating-the-Impact-of-Enrollment-Prompts-on-User-Engagement-A-Data-Driven-A-B-Testing/blob/main/A_B%20Test%20for%20Udacity.pdf). This project is from the Udacity website.
+Note: I attached a more detailed report to this repository, or you can check it [here](https://github.com/bayoxx/Evaluating-the-Impact-of-Enrollment-Prompts-on-User-Engagement-A-Data-Driven-A-B-Testing/blob/main/A_B%20Test%20for%20Udacity.pdf).
 
 In this experiment, Udacity tested a change on the course overview page aimed at setting clearer time expectations for students enrolling in a free trial. Students who clicked "Start a free trial" were asked how much time they had to commit to the course. Those with fewer than 5 hours per week received a message suggesting they may want to access the free course materials instead. 
 
@@ -234,7 +234,7 @@ This follow-up could also refine messaging or UX elements to improve user decisi
 
 Note: I attached a more detailed report to this repository, or you can check it [here](https://github.com/bayoxx/Evaluating-the-Impact-of-Enrollment-Prompts-on-User-Engagement-A-Data-Driven-A-B-Testing/blob/main/A_B%20Test%20for%20Udacity.pdf).
 
-
+Source: Udacity
 
 
 
