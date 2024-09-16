@@ -78,8 +78,8 @@ Where:
 
 - n is the sample size per group.
 - σ is the standard deviation of the metric.
-- Z<sub>α/2<sub> is the z-value for the significance level (α = 0.05, so Zα = 1.96)
-- Z<sub>β<sub> is the z-value for the power level (β = 0.2, so Zβ = 0.84)
+- Z<sub>α/2 is the z-value for the significance level (α = 0.05, so Z<sub>α = 1.96)
+- Z<sub>β is the z-value for the power level (β = 0.2, so Z<sub>β = 0.84)
 - dmin is the minimum detectable effect size.
 
 Again, the metrics have been calculated in the referenced sheet above. You can also check [here](https://docs.google.com/spreadsheets/d/1MYreBw6wxBCLsgTJqhO9g4Ppf3dQbX7HFfIwWkMvmjE/edit?gid=103790292#gid=103790292)
