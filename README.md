@@ -170,9 +170,9 @@ The control group's pageviews (345,543) fall within the confidence interval [344
 ### Check for Practical and Statistical Significance (Evaluation metrics)
 
 Evaluation metrics used: 
-		       Gross Conversion;
-                       Retention; and 
-                       Net Conversion.
+		       - Gross Conversion;
+                       - Retention; and 
+                       - Net Conversion.
 
 These three metrics align with the hypothesis and goals of the experiment. They measure user interest their level of commitment and the likelihood of succeeding in the course.
 The calculations that we’ll be using have been carried out in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786).
