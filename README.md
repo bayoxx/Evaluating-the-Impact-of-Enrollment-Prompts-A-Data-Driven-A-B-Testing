@@ -56,7 +56,7 @@ Response:
 ### Sizing
 #### Choosing the Number of Samples given Power
 
-I used the [Evan Miller A/B testing calculator](https://www.evanmiller.org/ab-testing/sample-size.html) for solve this.
+I used the [Evan Miller A/B testing calculator](https://www.evanmiller.org/ab-testing/sample-size.html) to solve this.
 
 
 The results are given below.
