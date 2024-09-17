@@ -175,7 +175,7 @@ Evaluation metrics used:
 - Net Conversion.
 
 These three metrics align with the hypothesis and goals of the experiment. They measure user interest their level of commitment and the likelihood of succeeding in the course.
-The calculations that we’ll be using have been carried out in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786).
+The calculations that I’ll be using have been carried out in the [spreadsheet](https://docs.google.com/spreadsheets/d/1O-4VeCNMU8Wi08FjWFRujJvtmhayW2MYb_rALHOvpQM/edit?gid=743309786#gid=743309786).
 
 
 **Definition:**
