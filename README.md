@@ -56,44 +56,34 @@ Response:
 ### Sizing
 #### Choosing the Number of Samples given Power
 
-Number of Samples vs. Power
-
-Using the formula below, the respective power for each evaluation
+I used the [Evan Miller A/B testing calculator](https://www.evanmiller.org/ab-testing/sample-size.html) for solve this.
 
 
-For each metric, we will use the following inputs:
+The results are given below.
 
-
- **n= (2(σ ^2)(Z<sub>α/2</sub> + Z<sub>β</sub>)^2)/ dmin^2**
-
-Where:
-
-- n is the sample size per group.
-- σ is the standard deviation of the metric.
-- Z<sub>α/2</sub> is the z-value for the significance level (α = 0.05, so Z<sub>α</sub> = 1.96)
-- Z<sub>β</sub> is the z-value for the power level (β = 0.2, so Z<sub>β</sub> = 0.84)
-- dmin is the minimum detectable effect size.
 
 Again, the metrics have been calculated in the referenced sheet above. You can also check [here](https://docs.google.com/spreadsheets/d/1MYreBw6wxBCLsgTJqhO9g4Ppf3dQbX7HFfIwWkMvmjE/edit?gid=103790292#gid=103790292)
 
 You can also check the table below
-| Metric            | Probability | Standard dev | Pageview power per group | Total pageviews for both groups |
-|-------------------|-------------|--------------|--------------------------|---------------------------------|
-| Gross conversion   | 0.2063      | 0.0072       | 8                        | 16                              |
-| Retention          | 0.5300      | 0.0194       | 59                       | 118                             |
-| Net Conversion     | 0.1093      | 0.0055       | 8                        | 17                              |
-| **Total**          |             |              |                          | **151**                         |
+
+| Metric           | Probability | Standard Dev | dmin  | Pageview Power per Group | Total Pageviews for Both Groups |
+|------------------|-------------|--------------|-------|---------------------------|---------------------------------|
+| Gross conversion | 0.2063      | 0.0072       | 0.0100| 507                       | 1,014                           |
+| Retention        | 0.5300      | 0.0194       | 0.0100| 1,032                     | 2,064                           |
+| Net Conversion   | 0.1093      | 0.0055       | 0.0075| 539                       | 1,078                           |
+| **Total**        |             |              |       |                           | **4,156**                       |
 
 ​
- To adequately power the experiment, we need to ensure we have enough pageviews for each metric. A total of 151 pageviews are needed.
+
+To adequately power the experiment, we need to ensure we have enough pageviews for each metric. A total of 4,156 pageviews are needed.
 
  #### Duration
 
- To calculate the % of traffic to divert to the experiment, we need to focus on those who click "Start free trial” (3,200 cookies)" The total number of pageviews we need for both groups is 151.
+To calculate the % of traffic to divert to the experiment, we need to focus on those who click "Start free trial” (40,000 cookies)" The total number of pageviews we need for both groups is 4,156.
 
-**% of traffic to divert** = no of pageviews required for both groups/  unique cookies who click "Start free trial” 
+**% of traffic to divert** = no of pageviews required for both groups/  ique cookies to view course overview page per day 
 
-= 4.7%
+= 10.39%
 
 
 **Risk consideration** 
@@ -101,7 +91,7 @@ You can also check the table below
 The change in the experiment doesn’t seem too risky (it’s a change to messaging about time commitment), so there’s no strong reason to avoid diverting all traffic. 
 
 #### Exposure 
-With 4.7% of traffic diverted to the experiment, it would take less than a day to collect enough data for the sample size based on the analytic estimates of variance.
+With 10.39% of traffic diverted to the experiment, it would take less than a day to collect enough data for the sample size based on the analytic estimates of variance.
 Thus, the experiment would run very quickly, and there is no need to reconsider any earlier decisions regarding the sample size or traffic diversion percentage.
 
 ---
